@@ -260,15 +260,19 @@ async def ping(ctx, target: discord.Member, times: int):
 @bot.command()
 @commands.has_role("new role")
 async def ban(ctx, target: discord.Member, reason):
-    await ctx.send(f'Banning {target.mention}')
+    await ctx.send(f'Banning {target.mention}, reason: {reason}')
     await target.ban(reason=reason)
 
 
 @bot.command()
 @commands.has_role("new role")
 async def kick(ctx, target: discord.Member, reason):
-    await ctx.send(f'Kicking {target.mention}')
+    await ctx.send(f'Kicking {target.mention}, reason: {reason}')
     await target.kick(reason=reason)
 
+
+@bot.command()
+async def purge(ctx, number: int):
+    await ctx.channel.purge(limit=number + 1)
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
