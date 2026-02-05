@@ -32,11 +32,6 @@ async def on_member_join(member):
     await member.send('Type "!commands" to learn commands!')
 
 
-@bot.command()
-async def commands(ctx):
-    await ctx.send("COMMANDS\nall parameters are required\n*=new role required\n!commands\n!positive (user)*\n!bum (user)*\n!negative (user)*\n!execution (user)*\n!pet (user)*\n!pet1 (user)*\n!pet2 (user)*\n!pet3 (user)*\n!ping (user) (times)*\n!ban (user) (reason)*\n!kick (user) (reason)*\n!nick (user) (nickname)*\n!purge (number of messages)\n!ball (question)")
-
-
 @bot.event
 async def on_message(message):
     if message.author == bot.user:
@@ -286,6 +281,12 @@ async def purge(ctx, number: int):
 async def ball(ctx):
     answer = random.randint(0, 19)
     await ctx.reply(ball_answers[answer])
+    
+
+@bot.command()
+async def commands(ctx):
+    await ctx.send("COMMANDS\nall parameters are required\n*=new role required\n!commands\n!positive (user)*\n!bum (user)*\n!negative (user)*\n!execution (user)*\n!pet (user)*\n!pet1 (user)*\n!pet2 (user)*\n!pet3 (user)*\n!ping (user) (times)*\n!ban (user) (reason)*\n!kick (user) (reason)*\n!nick (user) (nickname)*\n!purge (number of messages)\n!ball (question)")
+
 
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
