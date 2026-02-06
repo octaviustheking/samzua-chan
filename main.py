@@ -34,6 +34,8 @@ async def on_member_join(member):
 
 @bot.event
 async def on_message(message):
+    number = random.randint(0, 100)
+
     if message.author == bot.user:
         return
 
@@ -62,6 +64,10 @@ async def on_message(message):
 
     if discord.utils.get(message.guild.roles, name='Premium Execution Trash [+++]') in message.author.roles:
         await message.add_reaction('🤡')
+
+    if number == 73:
+        phrases = ["uwu *crawls over and kisses you passionately*", "*slides over* meow *notices bulge in your pants* whats this owo?", "meowww uwu nyaa", "im hard"]
+        await message.reply(phrases[random.randint(0, 3)])
 
     await bot.process_commands(message)
 
