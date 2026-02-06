@@ -50,11 +50,12 @@ async def on_message(message):
     if "scaras" in message.content.lower():
         await message.reply(f'<@1326380607168581733>')
 
-    if message.content.lower() == "wha":
+    if "wha" in message.content.lower() and message.author.id == "1326380607168581733":
         await message.reply('syfm zhenbo')
 
     if "augusta sucks" in message.content.lower():
         await message.reply('you fucking idiot why did you have to be so mean')
+        await message.author.edit(nick="bully+idiot")
 
     if "masha" in message.content.lower():
         await message.reply('syfm abhay')
@@ -281,12 +282,11 @@ async def purge(ctx, number: int):
 async def ball(ctx):
     answer = random.randint(0, 19)
     await ctx.reply(ball_answers[answer])
-    
+
 
 @bot.command()
 async def commands(ctx):
-    await ctx.send("COMMANDS\nall parameters are required\n*=new role required\n!commands\n!positive (user)*\n!bum (user)*\n!negative (user)*\n!execution (user)*\n!pet (user)*\n!pet1 (user)*\n!pet2 (user)*\n!pet3 (user)*\n!ping (user) (times)*\n!ban (user) (reason)*\n!kick (user) (reason)*\n!nick (user) (nickname)*\n!purge (number of messages)\n!ball (question)")
-
+    await ctx.send("COMMANDS\nall parameters are required\nx=new role required\n!commands\n!positive (user)x\n!bum (user)x\n!negative (user)x\n!execution (user)x\n!pet (user)x\n!pet1 (user)x\n!pet2 (user)x\n!pet3 (user)x\n!ping (user) (times)x\n!ban (user) (reason)x\n!kick (user) (reason)x\n!nick (user) (nickname)x\n!purge (number of messages)\n!ball (question)")
 
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
