@@ -108,7 +108,6 @@ async def pet2(ctx, target: discord.Member):
     await target.remove_roles(bum)
     await target.remove_roles(positive)
     await ctx.send(f'Set {target.mention} to Premium Execution Trash [++]')
-    await ctx.send('Role does not exist!')
 
 
 @bot.command()
